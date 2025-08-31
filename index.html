@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TaskMaster</h1>
+            <p>Organize your tasks effortlessly</p>
+        </header>
+
+        <div class="app-container">
+            <div class="lists-container">
+                <div class="panel-header">
+                    <h2>Lists</h2>
+                    <button id="add-list-btn">+ New List</button>
+                </div>
+                <div class="panel-body" id="lists-panel"></div>
+            </div>
+
+            <div class="tasks-container">
+                <div class="panel-header">
+                    <h2 id="current-list-title">Tasks</h2>
+                    <button id="add-task-btn">+ New Task</button>
+                </div>
+                <div class="panel-body" id="tasks-panel">
+                    <div class="no-tasks">Select a list to view tasks</div>
+                </div>
+                <div class="completed-toggle">
+                    <label>
+                        <input type="checkbox" id="show-completed">
+                        <span>Show completed tasks</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="list-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="list-modal-title">Add New List</h3>
+                <button id="close-list-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="list-name">List Name</label>
+                    <input type="text" id="list-name" placeholder="Enter list name">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-list-btn">Cancel</button>
+                <button id="save-list-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-backdrop" id="task-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="task-modal-title">Add New Task</h3>
+                <button id="close-task-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="task-title">Task Title</label>
+                    <input type="text" id="task-title" placeholder="Enter task title">
+                </div>
+                <div class="form-group">
+                    <label for="task-description">Description (Optional)</label>
+                    <input type="text" id="task-description" placeholder="Enter task description">
+                </div>
+                <div class="form-group">
+                    <label for="task-date">Due Date</label>
+                    <input type="date" id="task-date">
+                </div>
+                <div class="form-group">
+                    <label for="task-time">Due Time</label>
+                    <input type="time" id="task-time">
+                </div>
+                <div class="form-group">
+                    <label for="task-list">List</label>
+                    <select id="task-list"></select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancel-task-btn">Cancel</button>
+                <button id="save-task-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

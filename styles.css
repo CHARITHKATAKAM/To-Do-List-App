@@ -1,0 +1,241 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2980b9;
+    --success: #2ecc71;
+    --danger: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --border: #bdc3c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px 0;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 8px;
+}
+
+.app-container {
+    display: flex;
+    gap: 20px;
+    height: calc(100vh - 200px);
+    min-height: 500px;
+}
+
+.lists-container {
+    flex: 1;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks-container {
+    flex: 2;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 15px;
+}
+
+.panel-body {
+    flex: 1;
+    overflow-y: auto;
+}
+
+button {
+    cursor: pointer;
+    padding: 8px 12px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: var(--secondary);
+}
+
+button.danger {
+    background-color: var(--danger);
+}
+
+button.success {
+    background-color: var(--success);
+}
+
+input, select {
+    padding: 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    width: 100%;
+}
+
+.list-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    background-color: var(--light);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.list-item:hover, .list-item.active {
+    background-color: #d6eaf8;
+}
+
+.task-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    background-color: #e8f8f5;
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+}
+
+.task-content {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.task-date {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+
+.task-actions {
+    display: flex;
+    gap: 5px;
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.no-tasks {
+    text-align: center;
+    padding: 20px;
+    color: #95a5a6;
+}
+
+.completed-toggle {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.completed-toggle label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.completed-toggle input {
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .lists-container, .tasks-container {
+        height: 300px;
+    }
+}
